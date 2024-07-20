@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: 'Quicksand', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+ 
+header.navbar-container {
+  background-color: #326294;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 1200px;
+  padding-block: 1rem;
+  margin-inline: auto;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+ 
+header.navbar-container .logo img {
+  
+  width: 150px;
+}
+ 
+header.navbar-container .nav-list ul {
+  padding-left: 0;
+  
+  display: flex;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+ 
+header.navbar-container .nav-list li {
+  list-style-type: none;
+}
+ 
+header.navbar-container .nav-list li a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+ 
+header.navbar-container .nav-list li a.btn-login,
+header.navbar-container .nav-list li a.btn-register {
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #2d3e50;
+}
+ 
+header.navbar-container .nav-list li a.btn-login:hover,
+header.navbar-container .nav-list li a.btn-register:hover {
+  background-color: #425c77;
+}
+ 
+header.navbar-container .nav-list li:hover a:not(.btn-login):not(.btn-register) {
+  background-color: #425c77;
+  color: white;
+}
+ 
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+main .content, main .content2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem; /* Add spacing between content sections */
+}
+ 
+main .content .content-description, main .content2 .content-description2 {
+  flex: 1;
+}
+ 
+main .content .content-description .title, main .content2 .content-description2 .title2 {
+  margin-block: 1rem;
+  font-size: 3.5rem;
+}
+ 
+main .content .content-description p, main .content2 .content-description2 p {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+ 
+main .content .content-description button, main .content2 .content-description2 button {
+  padding: 0.8rem 2.5rem;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  margin-block-start: 1rem;
+  background-color: #2d3e50;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+}
+ 
+main .content .content-description button:hover, main .content2 .content-description2 button:hover {
+  border: 3px solid #2d3e50;
+  background-color: transparent;
+  color: #2d3e50;
+}
+ 
+main .content .content-image, main .content2 .content-image2 {
+  flex: 1;
+  display: flex;
+}
+ 
+main .content .content-image img, main .content2 .content-image2 img {
+  width: 300px;
+  min-width: 250px;
+  margin: auto;
+}
+ 
+/* Add this for reversing the direction */
+main .content2 {
+  flex-direction: row-reverse;
+}
+ 
+main aside, main .social-media2 {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+}
+ 
+main aside .social-media, main .social-media2 .social-media2 {
+  height: 100%;
+  display: flex;
+}
+ 
+main aside .social-media ul, main .social-media2 .social-media2 ul {
+  padding: 1.5rem 1rem;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  margin: auto;
+  background-color: #2d3e50;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+ 
+main aside .social-media li, main .social-media2 .social-media2 li {
+  list-style-type: none;
+}
+ 
+main aside .social-media li a, main .social-media2 .social-media2 li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  transition: all 0.1s ease-in-out;
+}
+ 
+main aside .social-media li a:hover, main .social-media2 .social-media2 li a:hover {
+  color: #89b0d9;
+}
+ 
+/* Medium devices (768px dan di bawahnya) */
+@media screen and (max-width: 768px) {
+  header.navbar-container {
+    flex-direction: column;
+  }
+ 
+  header.navbar-container .nav-list ul {
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+ 
+  main {
+    padding: 1rem 3rem;
+  }
+ 
+  main .content, main .content2 {
+    flex-direction: column;
+    gap: 2rem;
+  }
+ 
+  main .content .content-description .title, main .content2 .content-description2 .title2 {
+    font-size: 3rem;
+  }
+ 
+  main .content .content-description p, main .content2 .content-description2 p {
+    font-size: 1rem;
+  }
+ 
+  main .content .content-image, main .content2 .content-image2 {
+    order: -1;
+  }
+}
